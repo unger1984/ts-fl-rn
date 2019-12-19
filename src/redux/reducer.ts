@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers, Reducer } from 'redux';
 
 import ui from '../ducks/ui';
 
-const createRootReducer = () =>
+const createRootReducer = (): Reducer =>
 	combineReducers({
 		ui,
 	});

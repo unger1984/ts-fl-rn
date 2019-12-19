@@ -3,7 +3,7 @@ const FLBackService = {
 	setBackground: (): boolean => false,
 	setInterval: (): number => 5,
 	getAutostart: (): Promise<boolean> => {
-		return new Promise((resolve, reject) => {
+		return new Promise<boolean>(resolve => {
 			resolve(false);
 		});
 	},

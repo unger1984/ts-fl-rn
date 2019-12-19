@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import { Router, Scene, ActionConst } from 'react-native-router-flux';
+import { Router, Scene } from 'react-native-router-flux';
 import { connect, Provider } from 'react-redux';
 
 import colors from './const/colors';
@@ -12,7 +12,7 @@ import TabIcon from './components/common/TabIcon';
 const RouterWithRedux = connect()(Router);
 const store = configureStore();
 
-const App = () => {
+const App: React.FC = () => {
 	useEffect(() => {
 		StatusBar.setHidden(true);
 		SplashScreen.hide();
