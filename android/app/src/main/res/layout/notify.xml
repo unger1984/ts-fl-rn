@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="10dp" android:gravity="center"
+              style = "@android:style/TextAppearance.StatusBar.EventContent">
+
+    <ImageView
+            android:id="@+id/notification_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp" android:src="@drawable/fl" android:padding="5dp"
+            android:layout_gravity="center"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:padding="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="FL.RU"
+                android:id="@+id/textView12" android:textSize="12dp"
+                style = "@android:style/TextAppearance.StatusBar.EventContent"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="fill_horizontal">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/message" android:text="Новый проект!!!" android:layout_gravity="left"
+                    android:textSize="12dp"
+                    style = "@android:style/TextAppearance.StatusBar.EventContent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
