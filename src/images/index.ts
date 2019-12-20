@@ -3,12 +3,12 @@ import { ImageSourcePropType } from 'react-native';
 const images: { [key: string]: ImageSourcePropType } = {
 	icoBack: require('./ico_back.png'),
 
-	icoNew: require('./ico_new.png'),
-	icoNewActive: require('./ico_new_active.png'),
-	icoFilter: require('./ico_filter.png'),
-	icoFilterActive: require('./ico_filter_active.png'),
-	icoSettings: require('./ico_settings.png'),
-	icoSettingsActive: require('./ico_settings_active.png'),
+	icoProjects: require('./Projects.png'),
+	icoProjectsActive: require('./projectsActive.png'),
+	icoFilter: require('./filter.png'),
+	icoFilterActive: require('./filterActive.png'),
+	icoSettings: require('./settings.png'),
+	icoSettingsActive: require('./settingsActive.png'),
 
 	icoUp: require('./ico_up.png'),
 	icoDown: require('./ico_down.png'),
