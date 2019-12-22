@@ -9,7 +9,7 @@ import { settingsSelector } from './ducks/settings';
 import colors from './const/colors';
 import TabBarIcon from './components/common/TabBarIcon';
 import ProjectsScene from './components/ProjectsScene';
-import FiltersScene from './components/FiltersScene';
+import FiltersScene from './components/FilterScene/FiltersScene';
 
 const TabNavigator = createBottomTabNavigator(
 	{

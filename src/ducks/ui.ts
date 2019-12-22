@@ -6,6 +6,7 @@ import { AnyAction } from 'redux';
  **/
 export const moduleName = 'ui';
 
+export const FETCH = `${moduleName}/FETCH`;
 export const SET_PRELOADER = `${moduleName}/SET_PRELOADER`;
 export const SET_ADMOB_COUNTER = `${moduleName}/SET_ADMOB_COUNTER`;
 export const SET_NOTIFY = `${moduleName}/SET_NOTIFY`;
@@ -20,14 +21,14 @@ export interface UIState {
 export interface UIAction extends AnyAction {
 	readonly type: string;
 	readonly payload: {
-		preloader?: boolean;
+		isPreloader?: boolean;
 		admobCounter?: number;
 		isNotify?: boolean;
 		notify?: string;
 	};
 }
 
-const initialState: UIState = {
+export const initialState: UIState = {
 	isPreloader: false,
 	admobCounter: 0,
 	isNotify: false,
@@ -41,8 +42,10 @@ export default (state: UIState = initialState, action: UIAction): UIState => {
 	const { type, payload } = action;
 
 	switch (type) {
+		case FETCH:
+			return { ...state, ...payload };
 		case SET_PRELOADER:
-			return { ...state, isPreloader: payload.preloader || false };
+			return { ...state, isPreloader: payload.isPreloader || false };
 		case SET_ADMOB_COUNTER:
 			return { ...state, admobCounter: payload.admobCounter || 0 };
 		case SET_NOTIFY:
@@ -55,9 +58,14 @@ export default (state: UIState = initialState, action: UIAction): UIState => {
 /**
  * Action Creators
  **/
-export const setPreloader = (preloader: boolean): UIAction => ({
+export const fetchUI = (payload: UIState): UIAction => ({
 	type: SET_PRELOADER,
-	payload: { preloader },
+	payload,
+});
+
+export const setPreloader = (isPreloader: boolean): UIAction => ({
+	type: SET_PRELOADER,
+	payload: { isPreloader },
 });
 
 export const setAdmobCounter = (admobCounter: number): UIAction => ({

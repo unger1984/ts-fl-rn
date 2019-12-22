@@ -50,9 +50,13 @@ export const fetch = (list: Category[]): CategoryesAction => ({
 });
 
 export const getCategoyesList = () => (dispatch: Dispatch): void => {
-	api.categoryes.getCategoryes().then((res: ApiResponseInterface) => {
-		dispatch(fetch(res.data));
-	});
+	api.categoryes
+		.getCategoryes()
+		.then((res: ApiResponseInterface) => {
+			console.log('res', res);
+			dispatch(fetch(res.data));
+		})
+		.catch(exc => console.trace(exc));
 };
 
 /**
