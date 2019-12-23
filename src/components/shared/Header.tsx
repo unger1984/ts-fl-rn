@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import { Image, StyleSheet, TouchableOpacity, View, Text, ActivityIndicator } from 'react-native';
 import { useSelector } from 'react-redux';
+import { NavigationState } from 'react-navigation';
 
 import images from '../../images';
 import NotifyShade from './NotifyShade';
@@ -13,14 +14,17 @@ interface HeaderProps {
 	title: string;
 	isBack?: boolean;
 	fullscreen?: boolean;
+	navigation?: { state: NavigationState; goBack: () => void };
 }
 
-const Header: React.FC<HeaderProps> = ({ title, isBack, fullscreen = false }) => {
+const Header: React.FC<HeaderProps> = ({ title, isBack, fullscreen = false, navigation }) => {
 	const { fontSize } = useContext(SettingsContext);
 	const isPreloader = useSelector(uiPreloaderSelector);
 
 	const handleBack = () => {
-		// Actions.pop();
+		if (navigation) {
+			navigation.goBack();
+		}
 	};
 
 	return (
@@ -34,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ title, isBack, fullscreen = false }) =>
 				<View style={styles.container}>
 					{isBack && (
 						<TouchableOpacity onPress={handleBack} style={styles.headerButton}>
-							<Image style={{ width: 20, height: 20 }} resizeMode="contain" source={images.ico_back} />
+							<Image style={{ width: 20, height: 20 }} resizeMode="contain" source={images.icoBack} />
 						</TouchableOpacity>
 					)}
 					{isPreloader && <View style={{ width: 20, height: 20, marginLeft: 10 }} />}

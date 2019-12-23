@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import React, { useEffect } from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
